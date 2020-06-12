@@ -4,21 +4,21 @@ import { createMuiTheme } from "@material-ui/core/styles";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#2f4858"
+      main: "#2f4858" //bleu marine (+ foncé)
     },
     secondary: {
-      main: "#33658a"
+      main: "#33658a" //bleu foncé 
     },
     error: {
-      main: "#f26419"
+      main: "#f26419" //orange foncé
     },
     background: {
       default: "#2f4858",
       secondary: "#33658a"
     },
     text: {
-      primary: "#86bbd8",
-      secondary: "#f6ae2d",
+      primary: "#86bbd8", //light blue
+      secondary: "#f6ae2d", //orange
       black: "#000000"
     },
     spacing: 8
