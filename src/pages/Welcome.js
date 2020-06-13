@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import { Link as RouterLink} from "react-router-dom";
 import './Players.js';
 

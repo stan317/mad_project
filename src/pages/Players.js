@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.css';
-import theme from './theme.js';
+import '../App.css';
+import theme from '../theme.js';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import SvgIcon from "@material-ui/core/SvgIcon";

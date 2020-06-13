@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Players from './Players.js';
-import Welcome from "./Welcome.js";
-import Teams from "./Teams.js";
-import Words from "./Words.js";
+import Players from './pages/Players.js';
+import Welcome from "./pages/Welcome.js";
+import Teams from "./pages/Teams.js";
+import Words from "./pages/Words.js";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 function App() {
