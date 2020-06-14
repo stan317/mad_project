@@ -9,9 +9,29 @@ export const addPlayer = name => ({
 
 export const removePlayer = id => ({
     type: 'REMOVE_PLAYER',
-    id: nextWordId++
+    id
 })
 
 export const assignTeams = () => ({
     type: 'ASSIGN_TEAMS'
 })
+
+export const addWord = word => ({
+    type: 'ADD_WORD',
+    id: nextWordId++,
+    word
+})
+
+export const addPoint = () => ({
+    type: 'ADD_POINT'
+})
+
+export const startRound = () => ({
+    type: 'START_ROUND'
+})
+
+export const foundWord = id => ({
+    type: 'FOUND_WORD',
+    id
+})
+
