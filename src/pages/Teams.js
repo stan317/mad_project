@@ -1,14 +1,21 @@
 import React from 'react';
-import { Link as RouterLink} from "react-router-dom";
-import Button from '@material-ui/core/Button';
+import './Teams.css';
+import Grid from '@material-ui/core/Grid';
+import TeamList from '../containers/TeamList.js';
+import RouterButton from '../containers/RouterButton.js'
 
-export default function Teams () {
+
+const Teams =() => {
     return (
         <div>
             <h1>Teams</h1>
-            <Button variant="outlined" color="text.primary" component={RouterLink} to="/words">
-                    Write my words
-            </Button> 
+            <Grid container direction="row" justify="space-around" alignItems="flex-start">
+                <TeamList teamName="Team 1" teamComposition={["kevzer", "jtlabg", "a", "b", "f"]}/>
+                <TeamList teamName="Team 2" teamComposition={["stanpd", "laftaichung"]}/>
+            </Grid>
+            <RouterButton whereTo={"/words"} buttonName="Write my words" />
         </div>
     );
 }
+
+export default Teams;

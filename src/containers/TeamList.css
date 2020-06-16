@@ -1,0 +1,11 @@
+li {
+    list-style: none;
+}
+
+.team-name {
+    color: #f6ae2d;
+}
+
+.player {
+    margin: 3px;
+}
