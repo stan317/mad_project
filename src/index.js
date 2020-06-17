@@ -15,7 +15,7 @@ ReactDOM.render(
     {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
     <CssBaseline />
     <Provider store={store}>
-    <App />
+      <App />
     </Provider>
   </ThemeProvider>,
   document.querySelector("#root")

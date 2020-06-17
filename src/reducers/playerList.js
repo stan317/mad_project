@@ -1,5 +1,3 @@
-
-
 const playerList = (state = [], action) => {
     switch (action.type){
 
