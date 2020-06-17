@@ -1,18 +1,21 @@
 import React from 'react';
 import "./TeamList.css";
+import { connect } from 'react-redux';
 
-export default function TeamList(props) {
-    return (
+const TeamList = ({team, teamComposition}) => 
         <div>
-            <h2 className="team-name">{props.teamName}</h2>
+            <h2 className="team-name">Team {team}</h2>
             <ul className="team-list">
-                {props.teamComposition.map((player, i) => {
-                    return (
-                        <li className="player" key={i}>{player}</li> 
-                    );
-                })}
+                {teamComposition.map( player => 
+                        <li className="player" key={player.id}>{player.name}</li> 
+                )}
             </ul>
-        </div>
-    );
-}
 
+        </div>
+
+const mapStateToProps = (state, ownProps) => ({
+    teamComposition: state.playerList.filter(player =>
+        player.team === ownProps.team)
+})
+
+export default connect(mapStateToProps)(TeamList)

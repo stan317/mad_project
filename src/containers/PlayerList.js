@@ -9,7 +9,7 @@ const PlayerList = ({playerList, removePlayer}) => (
         {playerList.map( player =>
             <PlayerItem 
             key={player.id}
-            name={player.name} 
+            name={player.name}
             OnClick={() => removePlayer(player.id)}/>
         )}
     </ul>

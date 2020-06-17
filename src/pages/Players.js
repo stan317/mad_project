@@ -1,8 +1,8 @@
 import React from 'react';
 import './Players.css';
-import RouterButton from '../containers/RouterButton.js'
 import PlayerInput from '../containers/PlayerInput'
 import PlayerList from '../containers/PlayerList'
+import CreateTeamButton from '../containers/CreateTeamsButton'
 
 
 const Players =() => {
@@ -12,7 +12,7 @@ const Players =() => {
             <p >Number of players: </p>
             <PlayerList />
             <PlayerInput />
-            <RouterButton  whereTo={"/teams"} buttonName="Create Teams"/>             
+            <CreateTeamButton />             
         </div>
     );
 }

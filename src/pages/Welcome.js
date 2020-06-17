@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../logo.svg';
-import RouterButton from '../containers/RouterButton.js'
+import RouterButton from '../components/RouterButton.js'
 
 
 const Welcome =() => {
