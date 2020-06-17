@@ -22,12 +22,14 @@ export const addWord = word => ({
     word
 })
 
-export const addPoint = () => ({
-    type: 'ADD_POINT'
+export const addPoint = team => ({
+    type: 'ADD_POINT',
+    team
 })
 
-export const startRound = () => ({
-    type: 'START_ROUND'
+export const startRound = words => ({
+    type: 'START_ROUND',
+    words
 })
 
 export const foundWord = id => ({
