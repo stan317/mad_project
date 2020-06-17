@@ -2,8 +2,9 @@ const wordList = (state = [], action) => {
     switch (action.type){
 
         case 'ADD_WORD':
-            return [{
-                id: action.id,
+            return [
+                ...state,
+                {id: action.id,
                 word: action.word
             }]
 
