@@ -5,7 +5,7 @@ import RouterButton from '../components/RouterButton'
 
 const StartPlayingButton = ({words, startRound}) => {
     return(
-        <RouterButton  whereTo={"/round1"} buttonName="Start playing!"
+        <RouterButton  whereTo={"/game"} buttonName="Start playing!"
         onClick={() => startRound(words)}
         disabled={words<10}/>
     )
