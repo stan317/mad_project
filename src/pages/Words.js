@@ -1,7 +1,6 @@
 import React from 'react';
-import './Players.css';
-import WordInput from '../containers/WordInput'
-import StartPlayingButton from '../containers/StartPlayingButton'
+import WordInput from '../containers/WordInput';
+import StartPlayingButton from '../containers/StartPlayingButton';
 
 export default function Words () {
     return (
