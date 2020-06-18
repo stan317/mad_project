@@ -7,7 +7,8 @@ const playerList = (state = [], action) => {
                 {
                     id: action.id,
                     name: action.name,
-                    team: 0
+                    team: 0,
+                    playedInRound: false
                 }
             ]
         
@@ -27,6 +28,17 @@ const playerList = (state = [], action) => {
                 (teamOneIndexes.includes(player.id)) ? {...player, team: 1}
                 : {...player, team: 2}
             )
+
+        case 'CURRENTLY_PLAYING':
+            return (action.lastPlayer)
+                ? state.map(player =>
+                    (player.team === action.player.team) ? {...player, playedInRound : false}
+                    : player
+                )
+                : state.map(player =>
+                    (player.id === action.player.id) ? {...player, playedInRound: true}
+                    : player
+                )
 
         default:
             return state
