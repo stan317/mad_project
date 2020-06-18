@@ -1,15 +1,18 @@
 import React from 'react'
-import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton'
+import ClearIcon from '@material-ui/icons/Clear';
 
 const PlayerItem = ({name, OnClick}) => (
     <div>
         <label>
             {name}
         </label>
-        <Button className="destroy"
-            onClick = {OnClick}>
-                delete
-            </Button>
+        <IconButton
+            onClick = {OnClick}
+            aria-label="delete"
+            size = "small">
+                <ClearIcon color="secondary" fontSize="small"/>
+            </IconButton>
     </div>
 )
 
