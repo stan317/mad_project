@@ -1,5 +1,6 @@
 import React from "react";
 import {ROUND1_DESC} from '../constants';
+import './RoundCard.css';
 
 const RoundCard = ({roundNumber}) => (
         <div>
