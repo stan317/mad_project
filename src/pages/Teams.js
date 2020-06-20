@@ -9,7 +9,7 @@ const Teams =() => {
     return (
         <div>
             <h1>Teams</h1>
-            <Grid container direction="row" justify="space-around" alignItems="flex-start">
+            <Grid container className="my-grid">
                 <TeamList team={1} />
                 <TeamList team={2} />
             </Grid>

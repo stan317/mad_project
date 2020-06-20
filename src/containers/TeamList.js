@@ -10,7 +10,6 @@ const TeamList = ({team, teamComposition}) =>
                         <li className="player" key={player.id}>{player.name}</li> 
                 )}
             </ul>
-
         </div>
 
 const mapStateToProps = (state, ownProps) => ({

@@ -4,7 +4,7 @@ import RoundCard from '../components/RoundCard.js'
 export default function Game () {
     return (
         <div>
-            <RoundCard />
+            <RoundCard roundNumber={2} />
         </div>
     )
 }

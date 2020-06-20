@@ -3,18 +3,21 @@ import {ROUND1_DESC} from '../constants';
 import {ROUND2_DESC} from '../constants';
 import {ROUND3_DESC} from '../constants';
 import './RoundCard.css';
+import { Paper } from "@material-ui/core";
 
 const RoundCard = ({roundNumber}) => (
         <div>
-            <h1>Round {roundNumber} </h1>
-            <div className= "round" >
-                <h2 className= "underline" >
-                   Rules:
-                </h2>
-                <div>
-                   choix de round avec ? et :
+            
+            <Paper className= "paper" >
+                <h1>New Round! </h1>
+                <div className="row">
+                    {
+                    (roundNumber===1) ? (ROUND1_DESC) 
+                    : (roundNumber===2) ? (ROUND2_DESC)
+                    : (ROUND3_DESC)
+                    }
                 </div>
-            </div>
+            </Paper>
         </div>
     )
 

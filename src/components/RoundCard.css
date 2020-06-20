@@ -1,11 +1,18 @@
-.round{
+.paper{
     display: flex;
-    direction: row;
-    justify-content: center;
-    align-items: baseline;
+    flex-direction: column;  
+    margin-left: 20%;
+    margin-right: 20% 
 }
 
 .underline {
     text-decoration-line: underline;
     margin: 30px;
+}
+
+.row{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin: 10px;
 }

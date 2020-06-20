@@ -9,7 +9,6 @@ const Players =() => {
     return (
         <div>
             <h1>Players</h1>
-            <p >Number of players: </p>
             <PlayerList />
             <PlayerInput />
             <CreateTeamButton />             
