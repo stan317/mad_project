@@ -8,7 +8,7 @@ const playerList = (state = [], action) => {
                     id: action.id,
                     name: action.name,
                     team: 0,
-                    playedInRound: false
+                    alreadyPlayed: false
                 }
             ]
         
@@ -32,11 +32,11 @@ const playerList = (state = [], action) => {
         case 'CURRENTLY_PLAYING':
             return (action.lastPlayer)
                 ? state.map(player =>
-                    (player.team === action.player.team) ? {...player, playedInRound : false}
+                    (player.team === action.player.team) ? {...player, alreadyPlayed: false}
                     : player
                 )
                 : state.map(player =>
-                    (player.id === action.player.id) ? {...player, playedInRound: true}
+                    (player.id === action.player.id) ? {...player, alreadyPlayed: true}
                     : player
                 )
 

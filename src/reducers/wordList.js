@@ -17,7 +17,7 @@ const wordList = (state = [], action) => {
         
         case 'START_ROUND':
             return state.map( word =>
-                ({...word, found: true})
+                ({...word, found: false})
             )
         
         default:
