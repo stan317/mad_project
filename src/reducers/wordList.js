@@ -5,9 +5,21 @@ const wordList = (state = [], action) => {
             return [
                 ...state,
                 {id: action.id,
-                word: action.word
-            }]
-
+                word: action.word,
+                found: false}
+            ]
+        
+        case 'FOUND_WORD':
+            return state.map( word =>
+                (word.id === action.id) ? {...word, found: true}
+                : word
+            )
+        
+        case 'START_ROUND':
+            return state.map( word =>
+                ({...word, found: false})
+            )
+        
         default:
             return state
     }

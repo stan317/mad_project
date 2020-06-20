@@ -27,13 +27,18 @@ export const addPoint = team => ({
     team
 })
 
-export const startRound = words => ({
+export const startRound = () => ({
     type: 'START_ROUND',
-    words
 })
 
 export const foundWord = id => ({
     type: 'FOUND_WORD',
     id
+})
+
+export const playedTurn = (player, lastPlayer) =>({
+    type: 'PLAYED_TURN',
+    player,
+    lastPlayer
 })
 
