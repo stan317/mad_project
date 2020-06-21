@@ -1,22 +1,26 @@
 import React from 'react'
-import {startRound} from '../actions'
+import {startRound, nextPlayer, nextWord} from '../actions'
 import {connect} from 'react-redux'
 import RouterButton from '../components/RouterButton'
 
 const StartPlayingButton = ({wordCount, startRound}) => {
     return(
-        <RouterButton  whereTo={"/round1"} buttonName="Start playing!"
+        <RouterButton  whereTo={"/game"} buttonName="Start playing!"
         onClick={() => startRound()}
         disabled={wordCount<10}/>
     )
 }
 
 const mapStateToProps = state => ({
-    wordCount: state.wordList.length
+    wordCount: state.wordList.list.length
 })
 
 const mapDispatchToProps = dispatch => ({
-    startRound: () => dispatch(startRound())
+    startRound: () => {
+        dispatch(startRound());
+        dispatch(nextPlayer());
+        dispatch(nextWord());
+    }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(StartPlayingButton)
