@@ -4,25 +4,33 @@ import { createMuiTheme } from "@material-ui/core/styles";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#2f4858" //bleu marine (+ foncé)
+      main: "#1d3557" //bleu marine (+ foncé)
     },
     secondary: {
-      main: "#33658a" //bleu foncé 
+      main: "#457b9d" //bleu foncé 
     },
     error: {
-      main: "#f26419" //orange foncé
+      main: "#f86624" //orange foncé
     },
     background: {
-      default: "#2f4858",
-      secondary: "#33658a"
+      default: "#1d3557",
+      secondary: "#45b9d"
     },
     text: {
-      primary: "#86bbd8", //light blue
-      secondary: "#f6ae2d", //orange
+      primary: "#a8dadc", //light blue
+      secondary: "#f86634", //orange
       black: "#000000"
     },
     spacing: 8
+  },
+  overrides: {
+    MuiPaper: {
+      root: {
+        backgroundColor: "#33658a"
+      }
+    }
   }
+
 });
 
 export default theme;

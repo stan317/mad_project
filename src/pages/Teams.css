@@ -1,7 +1,6 @@
-
-.vl {
-    border: 3px solid #f6ae2d;
-    left: 50%;
-    position: absolute;
-  }
-
+.my-grid {
+  display: flex;
+  direction: row;
+  align-items:flex-start;
+  justify-content:center;
+}

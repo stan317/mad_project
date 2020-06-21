@@ -3,9 +3,14 @@ li {
 }
 
 .team-name {
-    color: #f6ae2d;
+    text-decoration-color: "secondary";
 }
 
 .player {
     margin: 3px;
+}
+
+.team-list {
+    margin-left: 100px;
+    margin-right: 100px;
 }
