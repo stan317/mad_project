@@ -5,11 +5,11 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import SvgIcon from "@material-ui/core/SvgIcon";
 
-const WordInput = ({wordCount, dispatch}) => {
+const WordInput = ({testw, wordCount, dispatch}) => {
     let input
     return(
         <div>
-            <p>Number of words: {wordCount}</p>
+            <p>Number of words: {wordCount} {testw}</p>
             <form className="my-form" 
                 onSubmit={e => {
                 e.preventDefault()
@@ -35,7 +35,8 @@ const WordInput = ({wordCount, dispatch}) => {
 }
 
 const mapStateToProps = state => ({
-    wordCount: state.wordList.length
+    wordCount: state.wordList.list.length,
+    testw: state.wordList.currentWord.word
 })
 
 export default connect(mapStateToProps)(WordInput)

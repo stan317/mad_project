@@ -31,14 +31,17 @@ export const startRound = () => ({
     type: 'START_ROUND',
 })
 
-export const foundWord = id => ({
+export const foundWord = (id, team) => ({
     type: 'FOUND_WORD',
-    id
+    id,
+    team
 })
 
-export const playedTurn = (player, lastPlayer) =>({
-    type: 'PLAYED_TURN',
-    player,
-    lastPlayer
+export const nextPlayer = () =>({
+    type: 'NEXT_PLAYER'
+})
+
+export const nextWord = () => ({
+    type: 'NEXT_WORD'
 })
 

@@ -14,7 +14,7 @@ const TeamList = ({team, teamComposition}) =>
         </div>
 
 const mapStateToProps = (state, ownProps) => ({
-    teamComposition: state.playerList.filter(player =>
+    teamComposition: state.playerList.list.filter(player =>
         player.team === ownProps.team)
 })
 

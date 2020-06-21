@@ -12,7 +12,7 @@ const CreateTeamsButton = ({playerCount, dispatch}) => {
 }
 
 const mapStateToProps = state => ({
-    playerCount: state.playerList.length
+    playerCount: state.playerList.list.length
 })
 
 export default connect(mapStateToProps)(CreateTeamsButton)

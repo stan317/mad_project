@@ -17,7 +17,7 @@ const PlayerList = ({playerList, removePlayer}) => (
 )
 
 const mapStateToProps = state => ({
-    playerList: state.playerList
+    playerList: state.playerList.list
 })
   
 const mapDispatchToProps = dispatch => ({
