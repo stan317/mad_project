@@ -3,9 +3,10 @@ import {ROUND1_DESC} from '../constants';
 import {ROUND2_DESC} from '../constants';
 import {ROUND3_DESC} from '../constants';
 import './RoundCard.css';
-import { Paper } from "@material-ui/core";
+import { Paper, Button } from "@material-ui/core";
 
-const RoundCard = ({roundNumber}) => (
+
+const RoundCard = ({roundNumber, onClick}) => (
         <div>
             
             <Paper className= "paper" >
@@ -17,6 +18,7 @@ const RoundCard = ({roundNumber}) => (
                     : (ROUND3_DESC)
                     }
                 </div>
+                <Button onClick={onClick}> Start round {roundNumber}</Button>
             </Paper>
         </div>
     )

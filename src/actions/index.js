@@ -45,3 +45,8 @@ export const nextWord = () => ({
     type: 'NEXT_WORD'
 })
 
+export const changeDisplay = display => ({
+    type: 'CHANGE_DISPLAY',
+    display
+})
+

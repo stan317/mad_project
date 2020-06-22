@@ -1,4 +1,4 @@
-const game = (state = {roundCount: 0, points: {1: 0, 2: 0}}, action) => {
+const game = (state = {roundCount: 0, points: {1: 0, 2: 0}, gameDisplay: 'NEW_ROUND'}, action) => {
     switch (action.type){
         case 'START_ROUND':
             return {...state,
@@ -8,6 +8,11 @@ const game = (state = {roundCount: 0, points: {1: 0, 2: 0}}, action) => {
             state.points[action.team] += 1
             return state
 
+        case 'CHANGE_DISPLAY':
+            return ({
+                ...state,
+                gameDisplay: action.display
+            })
         default:
             return state
     }

@@ -89,7 +89,7 @@ const playerList = (state = {list: test, currentPlayer: ({id:0, name:"ptest", al
                 list: state.list.map(player =>
                     ({...player, alreadyPlayed: false})
                 ),
-                playingTeam: Math.floor(2*Math.random())
+                playingTeam: Math.floor(2*Math.random()) +1
             }
 
         default:
