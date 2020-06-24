@@ -3,8 +3,11 @@ import {connect} from 'react-redux'
 import GameCard from '../components/GameCard'
 import { foundWord, nextWord, nextPlayer, changeDisplay, startRound } from '../actions'
 import RoundCard from '../components/RoundCard'
+import Clock from '../components/Clock'
+import PlayerCard from '../components/PlayerCard'
 
-const TurnDisplay = ({currentPlayer, currentWord, currentWordId, playingTeam, round, display, wordsLeft, passWord, foundWord, toPlayerCard, toGameCard, Team1Points, Team2Points}) => {
+const TurnDisplay = ({currentPlayer, currentWord, currentWordId, playingTeam, round, display, wordsLeft, Team1Points, Team2Points, 
+    passWord, foundWord, toGameCard, onTimeUp}) => {
     return (<div>
         <h1>Round {round} points {Team1Points} {Team2Points}</h1>
         <h1>{playingTeam}</h1>
@@ -12,9 +15,12 @@ const TurnDisplay = ({currentPlayer, currentWord, currentWordId, playingTeam, ro
         <GameCard currentPlayer={currentPlayer}
             word = {currentWord}
             passOnClick={() => passWord()} 
-            winOnClick={() => foundWord(currentWordId, playingTeam, (wordsLeft === 1))}/>}
+            winOnClick={() => foundWord(currentWordId, playingTeam, (wordsLeft === 1))}
+            onTimeUp={() => onTimeUp()}/>}
         {(display === 'NEW_ROUND') && 
         <RoundCard roundNumber={round} onClick={() => toGameCard()}/>}
+        {(display === 'NEW_PLAYER') &&
+        <PlayerCard player={currentPlayer} team={playingTeam} onClick={() => toGameCard()}/> }
         </div>
     )
 }
@@ -40,9 +46,12 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(nextWord());
     },
     passWord: () => dispatch(nextWord()),
-    nextPlayer: () => dispatch(nextPlayer()),
     toGameCard: () => dispatch(changeDisplay('GAME')),
-    toPlayerCard: () => dispatch(changeDisplay('NEW_PLAYER'))
+    onTimeUp: () => {
+        dispatch(nextPlayer());
+        dispatch(changeDisplay('NEW_PLAYER'));
+        dispatch(nextWord())
+    }
 
 })
 

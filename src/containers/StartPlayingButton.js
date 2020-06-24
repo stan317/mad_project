@@ -1,5 +1,5 @@
 import React from 'react'
-import {startRound, nextPlayer, nextWord} from '../actions'
+import {startRound, nextPlayer, nextWord, changeDisplay} from '../actions'
 import {connect} from 'react-redux'
 import RouterButton from '../components/RouterButton'
 
@@ -20,6 +20,7 @@ const mapDispatchToProps = dispatch => ({
         dispatch(startRound());
         dispatch(nextPlayer());
         dispatch(nextWord());
+        dispatch(changeDisplay('NEW_ROUND'))
     }
 })
 

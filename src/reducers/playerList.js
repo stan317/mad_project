@@ -24,7 +24,7 @@ const test = [
         alreadyPlayed: false
     }
 ]
-const playerList = (state = {list: test, currentPlayer: ({id:0, name:"ptest", alreadyPlayed:false}), playingTeam: 0}, action) => {
+const playerList = (state = {list: test, currentPlayer: test[0], playingTeam: 1}, action) => {
     switch (action.type){
 
         case 'ADD_PLAYER':
@@ -63,7 +63,7 @@ const playerList = (state = {list: test, currentPlayer: ({id:0, name:"ptest", al
             }
 
         case 'NEXT_PLAYER':
-            var nextTeam = 2 - state.playingTeam
+            var nextTeam = 3 - state.playingTeam
             var nextPlayers = state.list.filter( player =>
                 !player.alreadyPlayed & player.team===nextTeam
             )
@@ -89,7 +89,7 @@ const playerList = (state = {list: test, currentPlayer: ({id:0, name:"ptest", al
                 list: state.list.map(player =>
                     ({...player, alreadyPlayed: false})
                 ),
-                playingTeam: Math.floor(2*Math.random()) +1
+                playingTeam: Math.floor(2*Math.random()) + 1
             }
 
         default:

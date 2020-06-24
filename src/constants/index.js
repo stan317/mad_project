@@ -1,3 +1,5 @@
+import { useEffect } from "react"
+
 export const ROUND1_DESC = 
 "In this round, describe the word the way you want, without using words from the same family! "
 
@@ -6,3 +8,5 @@ export const ROUND2_DESC =
 
 export const ROUND3_DESC =
 "In this round, mime the word you want people to guess!"
+
+export const useMountEffect = (fun) => useEffect(fun, [])
