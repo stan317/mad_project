@@ -1,8 +1,9 @@
 .gamePaper{
     margin-left: 20%;
-    margin-right: 20%;
+    margin-right: 20%; 
     margin-top: 20px;
     padding: 20px;
+    width: 60%;
 }
 .myWord{
     border: 2px solid #fdfffc ;
@@ -10,6 +11,8 @@
     margin-left : 20%;
     margin-right: 20%;
     margin-bottom: 5%;
+    overflow-wrap: break-word;
+    padding: 5%;
 }
 .myPlayer{
     margin-bottom: 10px;

@@ -4,7 +4,6 @@ import { Paper, Button } from "@material-ui/core";
 
 const RoundCard = ({player, team, onClick}) => (
         <div>
-            
             <Paper className= "gamePaper" >
                 <h1>Team {team}</h1>
                 <div className="row">

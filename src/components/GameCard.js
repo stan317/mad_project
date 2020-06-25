@@ -8,27 +8,6 @@ import {useMountEffect} from '../constants';
 import './GameCard.css';
 import CountDown from '../components/CountDown.js'
 
-
-
-// class Timer {
-//     constructor(onTimeUp, time) {
-//       this.onTimeUp = onTimeUp;
-//       this.time = time;
-//       this.interval = setInterval(
-//           () => {this.tick()},
-//           1000
-//       )
-//     }
-    
-//     tick() {
-//     if (this.time>0) {this.time = this.time - 1}
-//     else {clearInterval(this.interval); this.onTimeUp();}
-//     }
-    
-//     getTime() {
-//         return this.time
-//     }
-//   }
 const GameCard = ({word, currentPlayer, winOnClick, passOnClick, onTimeUp}) => {
     useMountEffect(() => {setTimeout(onTimeUp, 10000)})
     return (
