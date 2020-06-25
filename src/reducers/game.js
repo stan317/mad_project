@@ -1,4 +1,4 @@
-const game = (state = {roundCount: 0, points: {1: 0, 2: 0}, gameDisplay: 'NEW_ROUND'}, action) => {
+const game = (state = {roundCount: 0, points: {1: 0, 2: 0}, gameDisplay: 'NEW_ROUND', timeoutId: 0, passCount: 0}, action) => {
     switch (action.type){
         case 'START_ROUND':
             return {...state,
@@ -13,6 +13,25 @@ const game = (state = {roundCount: 0, points: {1: 0, 2: 0}, gameDisplay: 'NEW_RO
                 ...state,
                 gameDisplay: action.display
             })
+
+        case 'STORE_TIMEOUT':
+            return ({
+                ...state,
+                timeoutId: action.id
+            })
+
+        case 'PASS':
+            return ({
+                ...state,
+                passCount: (state.passCount + 1)
+            })
+
+        case 'NEXT_PLAYER':
+            return({
+                ...state,
+                passCount: 0
+            })
+
         default:
             return state
     }

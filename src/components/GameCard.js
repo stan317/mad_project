@@ -8,8 +8,9 @@ import {useMountEffect} from '../constants';
 import './GameCard.css';
 import CountDown from '../components/CountDown.js'
 
-const GameCard = ({word, currentPlayer, winOnClick, passOnClick, onTimeUp}) => {
-    useMountEffect(() => {setTimeout(onTimeUp, 10000)})
+const GameCard = ({word, currentPlayer, winOnClick, passOnClick, onTimeUp, storeTimeout}) => {
+    useMountEffect(() => {var timeoutId = setTimeout(onTimeUp, 10000); 
+        storeTimeout(timeoutId)})
     return (
         <div className="gameFlex">
             <CountDown />

@@ -50,3 +50,12 @@ export const changeDisplay = display => ({
     display
 })
 
+export const pass = () => ({
+    type: 'PASS',
+})
+
+export const storeTimeout = id => ({
+    type: 'STORE_TIMEOUT',
+    id
+})
+
