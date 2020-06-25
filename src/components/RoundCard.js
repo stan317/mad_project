@@ -9,7 +9,7 @@ import { Paper, Button } from "@material-ui/core";
 const RoundCard = ({roundNumber, onClick}) => (
         <div>
             
-            <Paper className= "paper" >
+            <Paper className= "gamePaper" >
                 <h1>New Round! </h1>
                 <div className="row">
                     {
@@ -18,7 +18,11 @@ const RoundCard = ({roundNumber, onClick}) => (
                     : (ROUND3_DESC)
                     }
                 </div>
-                <Button onClick={onClick}> Start round {roundNumber}</Button>
+                <Button 
+                variant="outlined" 
+                color="primary" 
+                onClick={onClick}> 
+                Start round {roundNumber} </Button>
             </Paper>
         </div>
     )

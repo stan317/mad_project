@@ -1,3 +1,25 @@
 .gamePaper{
-    background-color: blue;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20px;
+    padding: 20px;
+}
+.myWord{
+    border: 2px solid #fdfffc ;
+    border-radius: 25px;
+    margin-left : 20%;
+    margin-right: 20%;
+    margin-bottom: 5%;
+}
+.myPlayer{
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+.playerTurn{
+    margin-bottom: 30px
+}
+.gameFlex {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../logo.svg';
-import RouterButton from '../components/RouterButton.js'
+import RouterButton from '../components/RouterButton.js';
+import CountDown from '../components/CountDown.js';
 
 
 const Welcome =() => {

@@ -3,14 +3,25 @@ import {connect} from 'react-redux'
 import GameCard from '../components/GameCard'
 import { foundWord, nextWord, nextPlayer, changeDisplay, startRound } from '../actions'
 import RoundCard from '../components/RoundCard'
-import Clock from '../components/Clock'
+//import Clock from '../components/Clock'
 import PlayerCard from '../components/PlayerCard'
+import './TurnDisplay.css'
 
 const TurnDisplay = ({currentPlayer, currentWord, currentWordId, playingTeam, round, display, wordsLeft, Team1Points, Team2Points, 
     passWord, foundWord, toGameCard, onTimeUp}) => {
     return (<div>
-        <h1>Round {round} points {Team1Points} {Team2Points}</h1>
-        <h1>{playingTeam}</h1>
+            <div className="top">
+                <div> 
+                    <h2> Team 1</h2>
+                    <h1> {Team1Points} </h1>
+                </div>
+                <h1> Round {round} </h1>  
+                <div> 
+                    <h2> Team 2</h2>
+                    <h1> {Team2Points} </h1>
+                </div> 
+            </div>
+        {/* <h1>{playingTeam}</h1> */}
         {(display === 'GAME') &&
         <GameCard currentPlayer={currentPlayer}
             word = {currentWord}

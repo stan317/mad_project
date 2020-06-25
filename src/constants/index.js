@@ -10,3 +10,9 @@ export const ROUND3_DESC =
 "In this round, mime the word you want people to guess!"
 
 export const useMountEffect = (fun) => useEffect(fun, [])
+
+export const WINEQUAL =
+"This is an equality, both teams won!"
+
+export const WIN =
+"This is a victory for"

@@ -5,12 +5,12 @@ import { Paper, Button } from "@material-ui/core";
 const RoundCard = ({player, team, onClick}) => (
         <div>
             
-            <Paper className= "paper" >
+            <Paper className= "gamePaper" >
                 <h1>Team {team}</h1>
                 <div className="row">
-                    {player}'s turn
+                    <h2>{player}'s turn</h2>
                 </div>
-                <Button onClick={onClick}> start </Button>
+                <Button onClick={onClick} color="primary" variant="outlined"> start </Button>
             </Paper>
         </div>
     )
