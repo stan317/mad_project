@@ -3,7 +3,7 @@ import "./TeamList.css";
 import { connect } from 'react-redux';
 
 const TeamList = ({team, teamComposition}) => 
-        <div>
+        <div className="fullTeam">
             <h2 className="team-name">Team {team}</h2>
             <ul className="team-list">
                 {teamComposition.map( player => 

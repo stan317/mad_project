@@ -11,6 +11,12 @@ li {
 }
 
 .team-list {
-    margin-left: 100px;
-    margin-right: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.fullTeam{
+    /* border: 2px solid #fdfffc; */
+    margin: 10px;
+    /* width:200px; */
+    overflow-wrap: break-word
 }
