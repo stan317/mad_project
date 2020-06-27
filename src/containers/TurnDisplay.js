@@ -3,8 +3,8 @@ import {connect} from 'react-redux'
 import GameCard from '../components/GameCard'
 import { foundWord, nextWord, nextPlayer, changeDisplay, startRound, storeTimeout } from '../actions'
 import RoundCard from '../components/RoundCard'
-//import Clock from '../components/Clock'
 import PlayerCard from '../components/PlayerCard'
+import EndCard from '../components/EndCard'
 import './TurnDisplay.css'
 
 const TurnDisplay = ({currentPlayer, currentWord, currentWordId, playingTeam, round, display, wordsLeft, Team1Points, Team2Points, timeout, 
@@ -26,13 +26,15 @@ const TurnDisplay = ({currentPlayer, currentWord, currentWordId, playingTeam, ro
         <GameCard currentPlayer={currentPlayer}
             word = {currentWord}
             passOnClick={() => passWord()} 
-            winOnClick={() => foundWord(currentWordId, playingTeam, (wordsLeft === 1), timeout)}
+            winOnClick={() => foundWord(currentWordId, playingTeam, (wordsLeft === 1), timeout, round)}
             onTimeUp={() => onTimeUp()}
             storeTimeout={storeTimeout}/>}
         {(display === 'NEW_ROUND') && 
         <RoundCard roundNumber={round} onClick={() => toPlayerCard()}/>}
         {(display === 'NEW_PLAYER') &&
         <PlayerCard player={currentPlayer} team={playingTeam} onClick={() => toGameCard()}/> }
+        {(display === 'END') &&
+        <EndCard team1Points={Team1Points} Team2Points={Team2Points}/>}
         </div>
     )
 }
@@ -47,17 +49,26 @@ const mapStateToProps = state => ({
     Team2Points: state.game.points[2],
     wordsLeft: state.wordList.list.filter(word => !word.found).length,
     display: state.game.gameDisplay,
-    timeout: state.game.timeoutId
+    timeout: state.game.timeoutId,
+    
 })
   
 const mapDispatchToProps = (dispatch) => ({
-    foundWord: (wordId, team, lastWord, timeout) => {
+    foundWord: (wordId, team, lastWord, timeout, round) => {
         dispatch(foundWord(wordId, team));
         if (lastWord){
             clearTimeout(timeout);
-            dispatch(startRound());
-            dispatch(changeDisplay('NEW_ROUND'));}
-        dispatch(nextWord());
+            if (round >= 3){
+                dispatch(changeDisplay('END'))
+            }
+            else {
+                dispatch(startRound());
+                dispatch(changeDisplay('NEW_ROUND'));
+                dispatch(nextWord());
+            }}
+        else{
+            dispatch(nextWord());
+        }
     },
     passWord: () => dispatch(nextWord()),
     toGameCard: () => dispatch(changeDisplay('GAME')),

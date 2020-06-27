@@ -5,11 +5,11 @@ import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
-const WordInput = ({testw, wordCount, dispatch}) => {
+const WordInput = ({wordCount, dispatch}) => {
     let input
     return(
         <div>
-            <p>Number of words: {wordCount} {testw}</p>
+            <p>Number of words: {wordCount}</p>
             <form className="my-form" 
                 onSubmit={e => {
                 e.preventDefault()
@@ -30,8 +30,7 @@ const WordInput = ({testw, wordCount, dispatch}) => {
 }
 
 const mapStateToProps = state => ({
-    wordCount: state.wordList.list.length,
-    testw: state.wordList.currentWord.word
+    wordCount: state.wordList.list.length
 })
 
 export default connect(mapStateToProps)(WordInput)

@@ -35,7 +35,7 @@ const wordList = (state = {list: test, currentWord: ({id: 0, word: "test", found
         
         case 'NEXT_WORD':
             var possibleWords = state.list.filter(word =>
-                !word.found & (state.currentWord.id !== word.id)
+                !word.found
             )
             var nextWord = possibleWords[Math.floor(Math.random()*possibleWords.length)]
             return {
