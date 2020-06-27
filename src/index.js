@@ -12,7 +12,6 @@ import { Provider } from 'react-redux'
 const store = createStore(reducer)
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
     <CssBaseline />
     <Provider store={store}>
       <App />

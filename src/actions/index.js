@@ -59,3 +59,6 @@ export const storeTimeout = id => ({
     id
 })
 
+export const reset =() => ({
+    type: 'RESET'
+})

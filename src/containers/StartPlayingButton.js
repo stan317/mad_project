@@ -7,7 +7,7 @@ const StartPlayingButton = ({wordCount, startRound}) => {
     return(
         <RouterButton  whereTo={"/game"} buttonName="Start playing!"
         onClick={() => startRound()}
-        disabled={wordCount<10}/>
+        disabled={wordCount<15}/>
     )
 }
 

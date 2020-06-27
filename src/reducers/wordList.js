@@ -1,3 +1,5 @@
+
+// test list 
 const test = [...Array(10).keys()].map( i =>
     ({
         id: 20+i,
@@ -5,7 +7,7 @@ const test = [...Array(10).keys()].map( i =>
         found: false
     })
 )
-const wordList = (state = {list: test, currentWord: ({id: 0, word: "test", found: false}) }, action) => {
+const wordList = (state = {list: [], currentWord: ({id: 0, word: "test", found: false}) }, action) => {
     switch (action.type){
 
         case 'ADD_WORD':
@@ -41,6 +43,12 @@ const wordList = (state = {list: test, currentWord: ({id: 0, word: "test", found
             return {
                 ...state,
                 currentWord: nextWord
+            }
+
+        case 'RESET':
+            return {
+                ...state, 
+                list:[]
             }
 
         default:

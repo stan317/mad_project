@@ -4,17 +4,17 @@ import {WINEQUAL, WIN} from '../constants';
 import RouterButton from '../components/RouterButton';
 import "./EndCard.css";
 
-const EndCard = ({Team1Points, Team2Points}) => (
+const EndCard = ({team1Points, team2Points, onClick}) => (
         <Paper className="gamePaper">
             <div className="message">
                 <h1>Congratulations!</h1>
                     {
-                        (Team1Points > Team2Points) ? (WIN + " Team 1!") 
-                        : (Team1Points === Team2Points) ? (WINEQUAL)
+                        (team1Points > team2Points) ? (WIN + " Team 1!") 
+                        : (team1Points === team2Points) ? (WINEQUAL)
                         : (WIN + " Team 2!")
                     }
             </div>
-        <RouterButton whereTo={"/"} color="primary" buttonName={"Play Again!"}/>
+        <RouterButton whereTo={"/"} color="primary" buttonName={"Play Again!"} onClick={onClick}/>
         </Paper>
 )
 

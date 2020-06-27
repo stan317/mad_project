@@ -1,5 +1,4 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-//import { OutlinedInput } from "@material-ui/core";
 
 // A custom theme for this app
 const theme = createMuiTheme({
@@ -24,6 +23,7 @@ const theme = createMuiTheme({
     spacing: 8
   },
 
+
   overrides: {
     MuiPaper: {
       root: {
@@ -40,7 +40,7 @@ const theme = createMuiTheme({
               color: "#fdfffc" 
             }
         },
-      }
+      },
   }
 
 

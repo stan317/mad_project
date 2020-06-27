@@ -31,7 +31,15 @@ const game = (state = {roundCount: 0, points: {1: 0, 2: 0}, gameDisplay: 'END', 
                 ...state,
                 passCount: 0
             })
+        
+        case 'RESET':
+            return ({
+                ...state, 
+                roundCount: 0,
+                points: {1: 0, 2: 0},
+                passCount: 0
 
+            })    
         default:
             return state
     }

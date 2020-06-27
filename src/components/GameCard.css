@@ -1,28 +1,27 @@
 .gamePaper{
-    margin-left: 20%;
-    margin-right: 20%; 
+    margin-left: 5%;
+    margin-right: 5%; 
     margin-top: 20px;
     padding: 20px;
-    width: 60%;
+    min-width: 80%;
 }
 .myWord{
     border: 2px solid #fdfffc ;
     border-radius: 25px;
-    margin-left : 20%;
-    margin-right: 20%;
+    margin-left : 10%;
+    margin-right: 10%;
     margin-bottom: 5%;
     overflow-wrap: break-word;
     padding: 5%;
+    
 }
 .myPlayer{
     margin-bottom: 10px;
     padding-top: 10px;
 }
-.playerTurn{
-    margin-bottom: 30px
-}
+
 .gameFlex {
     display:flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center
 }

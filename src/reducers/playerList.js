@@ -1,3 +1,5 @@
+//test players
+
 const test = [
     {
         id: 10,
@@ -24,7 +26,7 @@ const test = [
         alreadyPlayed: false
     }
 ]
-const playerList = (state = {list: test, currentPlayer: test[0], playingTeam: 1}, action) => {
+const playerList = (state = {list: [], currentPlayer: test[0], playingTeam: 1}, action) => {
     switch (action.type){
 
         case 'ADD_PLAYER':
@@ -86,9 +88,6 @@ const playerList = (state = {list: test, currentPlayer: test[0], playingTeam: 1}
         case 'START_ROUND':
             return {
                 ...state,
-                list: state.list.map(player =>
-                    ({...player, alreadyPlayed: false})
-                ),
                 playingTeam: Math.floor(2*Math.random()) + 1
             }
 

@@ -11,7 +11,7 @@ const renderTime = ({ remainingTime }) => {
 const CountDown = () => (
     <CountdownCircleTimer
       isPlaying
-      duration={10}
+      duration={40}
       colors={[['#2EC4B6']]}
       size={80}
       strokeWidth={7}
